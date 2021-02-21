@@ -20,7 +20,7 @@ Ingest ML papers data
 """
 
 # Actual ML papers dataset
-data_fname = '../data/papers.csv'
+data_fname = '../../data/papers.csv'
 data = pd.read_csv(data_fname)
 data.dropna(subset=['full_text'], inplace=True)
 
@@ -32,7 +32,7 @@ Ingest and incorporate custom data science specific stop words
 """
 
 # Incorporate custom ML-specific stop words
-stopwords_fname = '../data/data_science_stopwords.csv'
+stopwords_fname = '../../data/ml_stopwords.csv'
 add_stop_words = pd.read_csv(stopwords_fname)
 new_stop_word_list = ENGLISH_STOP_WORDS.union(add_stop_words.Stopword.values)
 
@@ -44,11 +44,11 @@ Ingest custom keyword lists for ML topics
 """
 
 # Load all custom keyword lists for ML topics to use as topic priors in LDA
-topic_priors_dir = os.fsencode('../data/topic_priors/')
+topic_priors_dir = os.fsencode('../../data/topic_priors/')
 topic_priors_df_list = []
 base_weight = 100
 for f in os.listdir(topic_priors_dir):
-    fname = 'data/topic_priors/' + os.fsdecode(f)
+    fname = '../../data/topic_priors/' + os.fsdecode(f)
     topic_name = os.fsdecode(f).split('.')[0]
     topic_words = pd.read_csv(open(fname))
     topic_words[topic_name] = base_weight

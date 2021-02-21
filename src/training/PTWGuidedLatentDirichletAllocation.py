@@ -1,5 +1,5 @@
 from sklearn.utils import check_random_state
-from sklearn.decomposition._online_lda import _dirichlet_expectation_2d
+from sklearn.decomposition._online_lda_fast import _dirichlet_expectation_2d
 from sklearn.decomposition import LatentDirichletAllocation
 import numpy as np
 class PTWGuidedLatentDirichletAllocation(LatentDirichletAllocation):
