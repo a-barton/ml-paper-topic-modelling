@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Machine Learning Academic Paper Topic Model</title>
+    </head>
+    <body>
+        <form method="POST" enctype="multipart/form-data" action="{{ url_for('topics') }}">
+            Paste raw text of Machine Learning academic paper below and hit Submit:
+            <br> <br>
+            <textarea name="text" style="width:500px;height:400px;"></textarea>
+            <br> <br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

@@ -11,4 +11,11 @@ def ping():
 
 @app.route('/topics', methods=['GET', 'POST'])
 def topics():
-    return json.dumps('TODO')
+    if request.method == 'POST':
+        print(request.form['text'])
+        return request.form['text']
+    return render_template('topics.html')
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', debug=True)
