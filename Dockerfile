@@ -13,5 +13,5 @@ SHELL ["conda", "run", "-n", "ml-paper-topic-modelling", "/bin/bash", "-c"]
 RUN echo "Make sure flask is installed:"
 RUN python -c "import flask"
 
-COPY src/app/app.py .
+COPY src/app/ .
 ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "ml-paper-topic-modelling", "python", "app.py"]
