@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import json
 from inference import predict_topics
+from plot import plot_topics
 
 #from inference import ...
 
@@ -14,9 +15,9 @@ def ping():
 def topics():
     if request.method == 'POST':
         topic_preds = predict_topics(request.form['text']) 
-        max_topic = topic_preds.idxmax(axis=1)[0]
-        response = "The most likely topic is {}".format(max_topic)
-        return response
+        response_html_fname = 'response.html'
+        plot_topics(topic_preds, response_html_fname)
+        return render_template(response_html_fname)
     return render_template('topics.html')
 
 

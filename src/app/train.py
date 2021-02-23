@@ -126,6 +126,7 @@ def plot_top_words(model, feature_names, n_top_words, title, topic_names):
     plt.show()
 
 topic_names = topic_df.columns
+topic_names = [name.title().replace("_", " ") for name in topic_names]
 plot_top_words(lda, count_vectorizer.get_feature_names(), 20, 'Topics in LDA Model', topic_names)
 
 # %%
