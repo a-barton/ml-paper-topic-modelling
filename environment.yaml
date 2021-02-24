@@ -7,6 +7,7 @@ dependencies:
   - blas=1.0
   - ca-certificates=2021.1.19
   - certifi=2020.12.5
+  - cffi=1.14.5
   - click=7.1.2
   - cycler=0.10.0
   - dbus=1.13.18
@@ -15,7 +16,9 @@ dependencies:
   - flask=1.1.2
   - fontconfig=2.13.1
   - freetype=2.10.4
+  - gevent=21.1.1
   - glib=2.67.4
+  - greenlet=1.0.0
   - gst-plugins-base=1.14.0
   - gstreamer=1.14.0
   - icu=58.2
@@ -65,7 +68,8 @@ dependencies:
   - plotly=4.14.3
   - prompt-toolkit=3.0.8
   - ptyprocess=0.7.0
-  - pygments=2.7.4
+  - pycparser=2.20
+  - pygments=2.8.0
   - pyparsing=2.4.7
   - pyqt=5.9.2
   - python=3.8.5
@@ -88,8 +92,13 @@ dependencies:
   - xz=5.2.5
   - zeromq=4.3.3
   - zlib=1.2.11
+  - zope=1.0
+  - zope.event=4.5.0
+  - zope.interface=5.2.0
   - zstd=1.4.5
   - pip:
+    - futures==3.1.1
+    - gunicorn==20.0.4
     - joblib==1.0.1
     - scikit-learn==0.24.1
     - scipy==1.6.1

@@ -12,4 +12,4 @@ container:
 	sudo docker build --tag $(CONTAINER_NAME) .
 
 local-serve:
-	sudo docker run -p 5000:5000 -it latest
+	sudo docker run -p 5000:5000 -it ml-paper-topic-modelling
