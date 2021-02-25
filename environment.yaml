@@ -29,6 +29,7 @@ dependencies:
   - itsdangerous=1.1.0
   - jedi=0.17.0
   - jinja2=2.11.3
+  - joblib=1.0.1
   - jpeg=9b
   - jupyter_client=6.1.7
   - jupyter_core=4.7.1
@@ -99,7 +100,6 @@ dependencies:
   - pip:
     - futures==3.1.1
     - gunicorn==20.0.4
-    - joblib==1.0.1
     - scikit-learn==0.24.1
     - scipy==1.6.1
     - threadpoolctl==2.1.0

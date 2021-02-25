@@ -3,8 +3,6 @@ import json
 from inference import predict_topics
 from plot import plot_topics
 
-#from inference import ...
-
 app = Flask(__name__)
 
 @app.route('/ping', methods=['GET', 'POST'])
