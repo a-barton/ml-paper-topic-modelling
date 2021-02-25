@@ -17,8 +17,3 @@ def topics():
         plot_topics(topic_preds, response_html_fname)
         return render_template(response_html_fname)
     return render_template('topics.html')
-
-"""
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
-"""
