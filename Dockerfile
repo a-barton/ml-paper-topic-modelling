@@ -4,14 +4,18 @@ WORKDIR /src/app
 
 # Create environment
 COPY environment.yaml .
-RUN conda env create -f environment.yaml
+RUN apt-get install -y gunicorn
+RUN conda env create -f environment.yaml && pip install --upgrade flask gunicorn joblib
 
-# Make RUN commands use the new environment
-SHELL ["conda", "run", "-n", "ml-paper-topic-modelling", "/bin/bash", "-c"]
+# Make new shells switch to new conda environment by default
+RUN echo "source activate ml-paper-topic-modelling" >> ~/.bashrc
 
-# Make sure environment is activated
-RUN echo "Make sure flask is installed:"
-RUN python -c "import flask"
+ENV PATH /opt/conda/envs/ml-paper-topic-modelling/bin:$PATH
+
+# Switch shell from sh to bash
+SHELL ["/bin/bash", "-c"]
 
 COPY src/app/ .
-ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "ml-paper-topic-modelling", "python", "app.py"]
+RUN chmod +X gunicorn.sh
+EXPOSE 5000
+ENTRYPOINT ["bash", "gunicorn.sh"]
