@@ -5,6 +5,10 @@ from plot import plot_topics
 
 app = Flask(__name__)
 
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    return render_template('topics.html')
+
 @app.route('/ping', methods=['GET', 'POST'])
 def ping():
     return json.dumps('STATUS 200 - OK')
