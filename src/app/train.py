@@ -138,5 +138,7 @@ plot_top_words(lda, count_vectorizer.get_feature_names(), 20, 'Topics in LDA Mod
 artifact_path = 'model/'
 joblib.dump(lda, artifact_path + 'model.joblib')
 joblib.dump(count_vectorizer, artifact_path + 'count_vectorizer.joblib')
-joblib.dump(list(topic_names), artifact_path + 'topic_names.joblib')
+joblib.dump(topic_names, artifact_path + 'topic_names.joblib')
 
+
+# %%
