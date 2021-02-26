@@ -17,7 +17,6 @@ def ping():
 def topics():
     if request.method == 'POST':
         topic_preds = predict_topics(request.form['text']) 
-        response_html_fname = 'response.html'
-        plot_topics(topic_preds, response_html_fname)
-        return render_template(response_html_fname)
+        chart_html = plot_topics(topic_preds)
+        return render_template('topics.html', chart_html=chart_html)
     return render_template('topics.html')

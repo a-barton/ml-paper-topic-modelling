@@ -4,11 +4,12 @@
     </head>
     <body>
         <form method="POST" enctype="multipart/form-data" action="{{ url_for('topics') }}">
-            Paste raw text of Machine Learning academic paper below and hit Submit:
+            Paste raw text of Machine Learning academic paper below and hit Submit (give it a minute to process, free tier Heroku compute is modest...):
             <br> <br>
-            <textarea name="text" style="width:500px;height:400px;"></textarea>
+            <textarea name="text" style="width:1800px;height:200px;"></textarea>
             <br> <br>
             <input type="submit" value="Submit">
         </form>
+        {{ chart_html|safe }}
     </body>
 </html>

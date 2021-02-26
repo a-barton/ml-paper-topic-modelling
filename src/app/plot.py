@@ -1,6 +1,6 @@
 import plotly.express as px
 
-def plot_topics(topic_predictions, response_html_fname):
+def plot_topics(topic_predictions):
     topic_preds_T = topic_predictions.T
     topic_preds_T.reset_index(inplace=True)
     topic_preds_T.columns = ['Topic', 'Affinity']
@@ -22,6 +22,4 @@ def plot_topics(topic_predictions, response_html_fname):
         }
     )
 
-    fig.write_html('templates/' + response_html_fname)
-
-    return fig
+    return fig.to_html(full_html=False, include_plotlyjs='cdn')
