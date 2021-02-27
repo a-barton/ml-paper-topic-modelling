@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('topics.html')
+    return render_template('index.html')
 
 @app.route('/ping', methods=['GET', 'POST'])
 def ping():

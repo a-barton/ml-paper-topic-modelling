@@ -22,4 +22,6 @@ def plot_topics(topic_predictions):
         }
     )
 
-    return fig.to_html(full_html=False, include_plotlyjs='cdn')
+    raw_html = fig.to_html(full_html=False, include_plotlyjs='cdn')
+    new_html = '<div class="chart"' + raw_html[4:]
+    return new_html
