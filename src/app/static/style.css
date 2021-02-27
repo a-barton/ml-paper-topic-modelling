@@ -31,7 +31,7 @@ body {
 
 }
 .login { 
-	position: absolute;
+	position: relative;
 	top: 40%;
 	left: 50%;
 	margin: -150px 0 0 -150px;
@@ -42,7 +42,19 @@ body {
 .login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
 
 .chart {
-	position: bottom;
+	position: relative;
+	top: 50px;
+	left: 50%;
+	width: 1000px;
+	height: 500px;
+}
+
+.backbtn {
+	position: relative;
+	top: 600px;
+	left: 50%;
+	width: 100px;
+	height: 50px;
 }
 
 
