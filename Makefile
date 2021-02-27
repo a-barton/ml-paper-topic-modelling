@@ -23,8 +23,8 @@ heroku-create: heroku-login
 heroku-container-login: heroku-login
 	sudo heroku container:login
 
-push-container-heroku: heroku-login heroku-container-login
+heroku-container-push: heroku-login heroku-container-login
 	sudo heroku container:push web
 
-release-container-heroku: heroku-login heroku-container-login push-container-heroku
+heroku-container-release: heroku-login heroku-container-login push-container-heroku
 	sudo heroku container:release web
