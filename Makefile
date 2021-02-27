@@ -26,5 +26,5 @@ heroku-container-login: heroku-login
 heroku-container-push: heroku-login heroku-container-login
 	sudo heroku container:push web
 
-heroku-container-release: heroku-login heroku-container-login push-container-heroku
+heroku-container-release: heroku-login heroku-container-login heroku-container-push
 	sudo heroku container:release web
