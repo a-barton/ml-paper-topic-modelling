@@ -71,7 +71,7 @@ Library imports - self-explanatory:
 
 ```python
 import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
 from PTWGuidedLatentDirichletAllocation import PTWGuidedLatentDirichletAllocation # Customised sub-class of sklearn LDA
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 import matplotlib.pyplot as plt
@@ -118,7 +118,7 @@ count_vectorizer = CountVectorizer(max_df=0.80, min_df=2, stop_words=new_stop_wo
 tf_features = count_vectorizer.fit_transform(data.full_text)
 ```
 
-Build topic prior keyword lists into specific format required for custom LDA subclass (based on each word's positional index in the fitted `count_vectorizer`):
+Build topic prior keyword lists into specific format required for [custom LDA subclass](https://stackoverflow.com/questions/45170093/latent-dirichlet-allocation-with-prior-topic-words) (based on each word's positional index in the fitted `count_vectorizer`):
 
 ```python
 def get_word_index(row, count_vectorizer):
@@ -170,7 +170,7 @@ topic_names = [name.title().replace("_", " ") for name in topic_names]
 plot_top_words(lda, count_vectorizer.get_feature_names(), 20, 'Topics in LDA Model', topic_names)
 ```
 
-And finally, serialise the modelling artifacts (fitted model itself, along with the count vectorizer and the established topic names):
+And finally, serialise the modelling artifacts (fitted model itself, along with the count vectorizer and the established topic names) to use during inference in the actual web app deployment:
 
 ```python
 artifact_path = 'model/'

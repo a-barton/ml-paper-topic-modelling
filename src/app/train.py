@@ -5,7 +5,7 @@
 ######################
 
 import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
 from PTWGuidedLatentDirichletAllocation import PTWGuidedLatentDirichletAllocation # Customised sub-class of sklearn LDA
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 import matplotlib.pyplot as plt
