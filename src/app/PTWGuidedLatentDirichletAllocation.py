@@ -1,3 +1,5 @@
+# The following custom LDA class is adapted from https://stackoverflow.com/questions/45170093/latent-dirichlet-allocation-with-prior-topic-words
+
 from sklearn.utils import check_random_state
 from sklearn.decomposition._online_lda_fast import _dirichlet_expectation_2d
 from sklearn.decomposition import LatentDirichletAllocation
