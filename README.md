@@ -10,7 +10,7 @@ You can find an overview of the modelling approach itself below the following re
 
 This repository is **intended to be used in on a Unix system** (e.g. Ubuntu).
 It includes a [Makefile](https://en.wikipedia.org/wiki/Makefile) with various targets (outlined below) that can be invoked from a terminal at the root of the repo.
-Upon first cloning this repository, **you should change the APP_NAME variable within the Makefile** to your own name.
+Upon first cloning this repository, **you should change the APP_NAME variable within the Makefile** to some other project name of your choice.
 You can then setup a new Conda virtual environment (with all required dependancies) by running the following command in terminal from the root of the repo:
 
 ```bash
