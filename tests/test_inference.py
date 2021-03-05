@@ -20,26 +20,31 @@ def app_container(docker):
     yield container
     container.kill()
 
+######################
+## HELPER FUNCTIONS ##
+######################
+
+def post_minimal_payload(url='http://localhost:5000/topics', payload={'text':'neural network'}):
+    return requests.post(url, data=payload)
 
 ###########
 ## TESTS ##
 ###########
 
 def test_container_responds_to_ping(app_container):
-    r = requests.get("http://localhost:5000/ping")
-    print(r)
-    if r.status_code == 200:
+    resp = requests.get("http://localhost:5000/ping")
+    if resp.status_code == 200:
         assert True
     else:
-        pytest.fail(f"Container ping failed.  Response message: {r.text}")
+        pytest.fail(f"Container ping failed.  Response message: {resp.text}")
 
 
-def test_predict_topics(app_container):
-    headers = {'Content-Type' : 'text/xml'}
-    payload = {'text' : 'neural network'}
-    r = requests.post(
-        'http://localhost:5000/topics',
-        data=payload,
-        headers=headers
-    )
-    pytest.fail(r.text)
+def test_predict_returns_topics_page(app_container):
+    resp = post_minimal_payload()
+    assert "<title>ML Paper Topic Modelling - Predictions</title>" in resp.text
+
+
+def test_predict_topics_returns_chart(app_container):
+    resp = post_minimal_payload()
+    assert '<div class="chart">' in resp.text
+    assert '<script type="text/javascript">window.Plotly' in resp.text
