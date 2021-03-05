@@ -60,7 +60,7 @@ Several Makefile targets are included for the purposes of deploying to the free 
 
 The training dataset for this model is the [All NeurIPS (NIPS) Papers dataset](https://www.kaggle.com/rowhitswami/nips-papers-1987-2019-updated) as available on Kaggle.
 Given the size, the dataset itself is not included in this repository, but if you would like to play with the model yourself, the training script expects the papers.csv file in a `data/` directory at the root of the repo.
-The training process also expects a CSV list of Machine Learning specific stopwords (in the same `data/` directory), as well as a series of ML topic specific keyword list CSVs (for initialising the Bayesian priors of the model) with `data/topic_priors/`.
+The training process also expects a CSV list of Machine Learning specific stopwords (in the same `data/` directory), as well as a series of ML topic specific keyword list CSVs (for initialising the Bayesian priors of the model) within `data/topic_priors/`.
 
 Training code is contained in train.py - this file is **written with `# %%` decorators that allow [Visual Studio Code](https://code.visualstudio.com/) to recognise distinct code cells and run them in an interactive Python session just like a Jupyter notebook**.
 If you would like to play around with the model training, I highly recommend using Visual Studio Code to get the benefit of both a full featured IDE **as well as** the convenience of interactive Python code cells.
