@@ -31,15 +31,30 @@ body {
 
 }
 .login { 
-	position: relative;
-	top: 40%;
-	left: 50%;
-	margin: -150px 0 0 -150px;
-	width:400px;
-	height:400px;
+	width: 40%;
+	margin: auto;
 }
 
 .login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
+
+.login button { width: 10%; margin: auto;}
+
+.example {
+	width: 40%;
+	font-size: 10px;
+	margin: auto;
+}
+
+.example button { width: 25%; margin: auto;}
+
+.wrapper {
+	display: grid;
+	grid-gap: 20px;
+}
+
+.example h2 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
+
+.example a { color: rgb(250, 123, 4); }
 
 .chart {
 	position: relative;
