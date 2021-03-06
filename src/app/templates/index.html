@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <!--From https://codepen.io/frytyler/pen/EGdtg-->
-    <head>
-        <meta charset="UTF-8">
-        <title>ML Paper Topic Modelling</title>
-        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-      <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-      <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-      <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-      <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
-
-    </head>
-
-    <body>
-        <div class="login">
-            <h1>Machine Learning Academic Paper Topic Modelling</h1>
-        
-             <!-- Main Input For Receiving Query to our ML -->
-            <form action="{{ url_for('topics')}}"method="post">
-                Paste raw text of ML paper below and hit Predict Topics (give it a minute to process - Heroku free tier compute is modest...)
-                <br> <br>
-                <textarea name="text" style="width:400px;height:300px;"></textarea>
-                <br> <br>
-                <button type="submit" class="btn btn-primary btn-block btn-large">Predict Topics</button>
-            </form>
-        
-           <br>
-           <br>
-           
-         </div>
-    </body>
+  <!--From https://codepen.io/frytyler/pen/EGdtg-->
+  <head>
+    <meta charset="UTF-8">
+    <title>ML Paper Topic Modelling</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="login">
+        <h1>Machine Learning Academic Paper Topic Modelling</h1>
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('topics')}}"method="post">
+          Paste raw text of ML paper below and hit Predict Topics (give it a minute to process - Heroku free tier compute is modest...)
+          <br> <br>
+          <textarea name="text" style="width:80%;height:200px;"></textarea>
+          <br> <br>
+          <button type="submit" class="btn btn-primary btn-block btn-large">Predict Topics</button>
+        </form>
+      </div>
+      <div class="example">
+        <h2>Alternatively, try this example abstract from the <a href="https://www.aclweb.org/anthology/D14-1162.pdf">seminal paper on GloVe word embeddings</a>:</h2>
+        <!-- Example text input  -->
+        <form action="{{ url_for('example')}}"method="post">
+          <br>
+          Recent methods for learning vector space representations of words have succeeded in capturing fine-grained semantic and syntactic regularities using vector arithmetic, but the origin of these regularities has remained opaque. We analyze and make explicit the model properties needed for such regularities to emerge in word vectors. The result is a new global logbilinear regression model that combines the advantages of the two major model families in the literature: global matrix factorization and local context window methods. Our model efficiently leverages statistical information by training only on the nonzero elements in a word-word cooccurrence matrix, rather than on the entire sparse matrix or on individual context windows in a large corpus. The model produces a vector space with meaningful substructure, as evidenced by its performance of 75% on a recent word analogy task. It also outperforms related models on similarity tasks and named entity recognition.Recent methods for learning vector space representations of words have succeeded in capturing fine-grained semantic and syntactic regularities using vector arithmetic, but the origin of these regularities has remained opaque. We analyze and make explicit the model properties needed for such regularities to emerge in word vectors. The result is a new global logbilinear regression model that combines the advantages of the two major model families in the literature: global matrix factorization and local context window methods. Our model efficiently leverages statistical information by training only on the nonzero elements in a word-word cooccurrence matrix, rather than on the entire sparse matrix or on individual context windows in a large corpus. The model produces a vector space with meaningful substructure, as evidenced by its performance of 75% on a recent word analogy task. It also outperforms related models on similarity tasks and named entity recognition.
+          <br> <br>
+          <button type="submit" class="btn btn-primary btn-block btn-large">Show Predictions For Example Abstract</button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
