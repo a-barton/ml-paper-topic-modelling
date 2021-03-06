@@ -30,6 +30,12 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
 
 }
+
+.wrapper {
+	display: grid;
+	grid-gap: 20px;
+}
+
 .login { 
 	width: 40%;
 	margin: auto;
@@ -46,11 +52,6 @@ body {
 }
 
 .example button { width: 25%; margin: auto;}
-
-.wrapper {
-	display: grid;
-	grid-gap: 20px;
-}
 
 .example h2 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
 
