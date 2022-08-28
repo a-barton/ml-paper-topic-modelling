@@ -1,9 +1,5 @@
 # Machine Learning Academic Paper Topic Modelling
 
-## [Click Here For Live Demo](https://ml-paper-topic-modelling.herokuapp.com/)
-
-Live demo is deployed on Heroku free tier cloud hosting, and thus has a cold start delay after a period of inactivity - give it a minute or so to boot up after clicking the link, and try refreshing the page.
-
 ## Introduction
 
 An exercise in **deploying** a machine learning model using a [Flask](https://flask.palletsprojects.com/) web server and a [Docker](https://www.docker.com) container.  
